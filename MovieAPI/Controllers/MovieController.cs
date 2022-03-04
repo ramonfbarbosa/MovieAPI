@@ -32,7 +32,6 @@ namespace MovieAPI.Controllers
                 return Ok(movie);
             }
             return NotFound();
-
         }
 
         [HttpPost]
@@ -41,6 +40,36 @@ namespace MovieAPI.Controllers
             _context.Movies.Add(movie);
             _context.SaveChanges();
             return CreatedAtAction(nameof(FindMovieById), new { Id = movie.Id }, movie);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateMovie([FromBody] Movie updatedMovie, int id)
+        { 
+            Movie movie = _context.Movies.FirstOrDefault(movie => movie.Id == id);
+            if (movie != null)
+            {
+                movie.Title = updatedMovie.Title;
+                movie.Director = updatedMovie.Director;
+                movie.Duration = updatedMovie.Duration;
+                movie.Genre = updatedMovie.Genre;
+                _context.SaveChanges();
+
+                return NoContent();
+            }
+            return NotFound();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMovie(int id)
+        {
+            Movie movie = _context.Movies.FirstOrDefault(movie => movie.Id == id);
+            if (movie != null)
+            {
+                _context.Remove(movie);
+                _context.SaveChanges();
+                return NoContent();
+            }
+            return NotFound();
         }
     }
 }
