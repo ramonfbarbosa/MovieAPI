@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "40Fg0B7cw81on70D9A8TBoO7IbIgdlRBqFIbqf5UIP2CMB/8Hd7JtVMcNPeNvbteUePSPXdR9ZeBHQUwJ3iJSA==",
+  "dgSpecHash": "jxDs7vYsyiEByGgH3AqBApOUj4PGlzMI3C0Wl4hlriBJwKzirUYG0z/jO8EJQ32GoGI3908iiqZJQb6LIxcDAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\55219\\Documents\\C# Projects - Ramon\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\55219\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\55219\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\55219\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\55219\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\55219\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.5\\microsoft.entityframeworkcore.5.0.5.nupkg.sha512",
@@ -33,6 +35,7 @@
     "C:\\Users\\55219\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\55219\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\55219\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\55219\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\55219\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
