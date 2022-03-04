@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieAPI.Data;
 using MovieAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,23 @@ namespace MovieAPI.Controllers
     [Route("[controller]")]
     public class MovieController : ControllerBase
     {
-        private static List<Movie> movies = new List<Movie>();
-        private static int id = 1;
+        private MovieContext _context;
+
+        public MovieController(MovieContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
-        public IActionResult GetMovies()
+        public IEnumerable<Movie> GetMovies()
         {
-            return Ok(movies);
+            return _context.Movies;
         }
 
         [HttpGet("{id}")]
         public IActionResult FindMovieById(int id)
         {
-            Movie movie = movies.FirstOrDefault(movie => movie.Id == id);
+            Movie movie = _context.Movies.FirstOrDefault(movie => movie.Id == id);
             if (movie != null)
             {
                 return Ok(movie);
@@ -32,13 +37,10 @@ namespace MovieAPI.Controllers
 
         [HttpPost]
         public IActionResult AddMovie([FromBody] Movie movie)
-        { 
-            movie.Id = id++;
-            movies.Add(movie);
+        {
+            _context.Movies.Add(movie);
+            _context.SaveChanges();
             return CreatedAtAction(nameof(FindMovieById), new { Id = movie.Id }, movie);
-
         }
-
-        
     }
 }
