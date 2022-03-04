@@ -28,10 +28,7 @@ namespace MovieAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["DbContextSettings:ConnectionString"];
-            services.AddDbContext<MovieContext>(options =>
-            options.UseNpgsql(connectionString)
-             );
+            services.AddDbContext<MovieContext>(opts => opts.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
