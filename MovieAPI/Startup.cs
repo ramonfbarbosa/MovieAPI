@@ -29,7 +29,7 @@ namespace MovieAPI
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration["dbContextSettings:ConnectionString"];
-            services.AddDbContext<MovieContext>(options =>
+            services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(connectionString)
         );
             services.AddControllers();

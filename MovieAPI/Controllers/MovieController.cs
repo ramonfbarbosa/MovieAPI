@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MovieAPI.Data;
-using MovieAPI.Data.DTOs;
+using MovieAPI.Data.DTOs.MovieDTO;
 using MovieAPI.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,10 +12,10 @@ namespace MovieAPI.Controllers
     [Route("[controller]")]
     public class MovieController : ControllerBase
     {
-        private MovieContext _context;
+        private AppDbContext _context;
         private IMapper _mapper;
 
-        public MovieController(MovieContext context, IMapper mapper)
+        public MovieController(AppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
