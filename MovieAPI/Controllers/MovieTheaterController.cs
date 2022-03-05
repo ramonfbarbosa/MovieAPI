@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MovieAPI.Data;
-using MovieAPI.Data.DTOs.MovieTheaterDTO;
+using MovieAPI.Data.DTOs;
 using MovieAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace MovieAPI.Controllers
 
 
         [HttpPost]
-        public IActionResult AddMovieTheater([FromBody] MovieTheaterDTO movieTheaterDTO)
+        public IActionResult AddMovieTheater([FromBody] AddressDTO movieTheaterDTO)
         {
             MovieTheater movieTheater = _mapper.Map<MovieTheater>(movieTheaterDTO);
             _context.MoviesTheater.Add(movieTheater);
@@ -43,14 +43,15 @@ namespace MovieAPI.Controllers
             MovieTheater movieTheater = _context.MoviesTheater.FirstOrDefault(movieTheater => movieTheater.Id == id);
             if (movieTheater != null)
             {
-                ReadMovieTheaterDTO movieTheaterDTO = _mapper.Map<ReadMovieTheaterDTO>(movieTheater);
+                ReadAddressDTO movieTheaterDTO = _mapper.Map<ReadAddressDTO>(movieTheater);
+
                 return Ok(movieTheaterDTO);
             }
             return NotFound();
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateMovieTheater(int id, [FromBody] MovieTheaterDTO movieTheaterDTO)
+        public IActionResult UpdateMovieTheater(int id, [FromBody] AddressDTO movieTheaterDTO)
         {
             MovieTheater movieTheater = _context.MoviesTheater.FirstOrDefault(movieTheater => movieTheater.Id == id);
             if (movieTheater == null)
@@ -59,6 +60,7 @@ namespace MovieAPI.Controllers
             }
             _mapper.Map(movieTheaterDTO, movieTheater);
             _context.SaveChanges();
+
             return NoContent();
         }
 
@@ -73,6 +75,7 @@ namespace MovieAPI.Controllers
             }
             _context.Remove(movieTheater);
             _context.SaveChanges();
+
             return NoContent();
         }
 

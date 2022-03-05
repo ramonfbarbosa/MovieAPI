@@ -2,7 +2,7 @@
 
 namespace MovieAPI.Data.DTOs
 {
-    public class ReadMovieTheaterDTO
+    public class ReadAddressDTO
     {
         [Key]
         [Required]
@@ -11,11 +11,11 @@ namespace MovieAPI.Data.DTOs
         public string Name { get; set; }
         public object Adress { get; set; }
 
-        public ReadMovieTheaterDTO()
+        public ReadAddressDTO()
         {
         }
 
-        public ReadMovieTheaterDTO(int id, string name, object adress)
+        public ReadAddressDTO(int id, string name, object adress)
         {
             Id = id;
             Name = name;

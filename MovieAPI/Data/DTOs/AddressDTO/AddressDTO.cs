@@ -2,17 +2,17 @@
 
 namespace MovieAPI.Data.DTOs
 {
-    public class MovieTheaterDTO
+    public class AddressDTO
     {
         [Required(ErrorMessage = "You need to fill the field")]
         public string Name { get; set; }
         public int AdressFK { get; set; }
         public int ManagerFK { get; set; }
 
-        public MovieTheaterDTO()
+        public AddressDTO()
         {
         }
-        public MovieTheaterDTO(string name, int adressFK, int managerFK)
+        public AddressDTO(string name, int adressFK, int managerFK)
         {
             Name = name;
             AdressFK = adressFK;

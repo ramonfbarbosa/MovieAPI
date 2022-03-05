@@ -2,16 +2,16 @@
 
 namespace MovieAPI.Data.DTOs
 {
-    public class UpdateMovieTheaterDTO
+    public class UpdateAddressDTO
     {
         [Required(ErrorMessage = "O campo de nome é obrigatório")]
         public string Name { get; set; }
 
-        public UpdateMovieTheaterDTO()
+        public UpdateAddressDTO()
         {
         }
 
-        public UpdateMovieTheaterDTO(string name)
+        public UpdateAddressDTO(string name)
         {
             Name = name;
         }
